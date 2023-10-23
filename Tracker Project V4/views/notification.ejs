@@ -1,0 +1,43 @@
+<%- include("templates/headerTemplate") %>
+  <link rel="stylesheet" href="/CSS/notificationStyles.css" />
+  <body>
+    <div class="Container">
+      <%- include("templates/navTemplate") %>
+      <main>
+        <div class="getNotifBox">
+          <div class="title">
+            GET NOTIFIED
+          </div>
+          <div>
+            <form class="notifyForm" id="notificationForm" action ="/notification" method="post">
+              <label for="selectCurrency">Select a Currency:</label>
+              <select id="selectACurrency" name="selectCurrency" required>
+                <!-- to be generated in js -->
+              </select>
+              <label  for="amount">Enter your Desired Amount:</label>
+              <input class="amountInput" type="number" id="amountInput" name="amountInput" min="0" required />
+              <label  for="email">Your Email:</label>
+              <input class="emailInput" type="email" id="emailInput" name="emailInput" required />  
+              <label  for="phone">Your Phone Number:</label>
+              <input class="phoneInput" type="tel" id="phoneInput" name="phoneInput" required /> 
+              <label for="notifType">How do we Notify You:</label>
+              <select id="notifType" name="notifType" required>
+                <option value="email">EMAIL</option>
+                <option value="sms">SMS</option>
+              </select>
+              <br>
+              <button class="notifyButton" id="convert_button" type="submit">NOTIFY</button>
+            </form>  
+          </div>
+          
+        <div>
+            <h3>Your Currency List:</h3>
+            <output><!-- to be generated in js -->
+        </div>     
+      </div>
+      </main>
+      <%- include("templates/footerTemplate") %>
+    </div>
+    <script src="/JS/currencySymbols.js" ></script>
+  </body>
+</html>

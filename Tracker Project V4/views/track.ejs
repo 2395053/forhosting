@@ -1,0 +1,39 @@
+<%- include("templates/headerTemplate") %>
+<link rel="stylesheet" href="/CSS/trackStyles.css">
+<body>
+    <div class="Container">
+        <%- include("templates/navTemplate") %>
+        <main>
+            <div class="trackBox">
+                <p class="title">YOUR CHOOSEN CURRENCIES</p>
+                <table class="currencyTable">
+                    <tbody id="dataOutput">
+                      <!--to be generated in js-->
+                      <%toDisplay.forEach (element => {%>     
+                   <tr>
+                      <td class="td1" id="td1"><%=element.currSymbol%>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<%=element.currentRate%></td>
+                      <td><button onclick="remove()" class="removeButton">REMOVE</button></td>
+                      <%});%>
+                   </tr>
+                    </tbody>
+                  </table>
+            <div class="addCurrency">
+                <form id="currencyConverterForm" action ="/track" method="post">
+                    <label for="from">SELECT CURRENCY TO TRACK:</label>
+                    <select id="toAdd" name="toAdd" required>
+                      <!-- to be generated in js -->
+                    </select>
+                    <br>
+                    <div class="formButtons">
+                      <button class="addButton" id="Add_button" type="submit" name="Add_button" formaction="/add">TRACK</button>
+                      <button class="addButton" id="remove_button" type="submit" name="remove_button" formaction="/remove">REMOVE</button>
+                    </div>   
+                  </form>
+            </div>
+            </div>    
+        </main>       
+        <%- include("templates/footerTemplate") %>    
+    </div>
+    <script src="/JS/currencies.js" ></script>
+</body>
+</html>

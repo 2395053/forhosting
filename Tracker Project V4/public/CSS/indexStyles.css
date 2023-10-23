@@ -1,0 +1,310 @@
+:root {
+  --main-margin: 0;
+  --main-radius: 4px;
+  --main-padding: 5px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.Container {
+  display: grid;
+  height: 100dvh;
+  background: #05000b;
+  background-image: url("/images/main.png");
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  background-size: cover;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.3fr 3fr 1fr 2fr 0.3fr;
+  grid-template-areas:
+    "nav nav"
+    "main converter"
+    "main getNotifInstructions"
+    "trackInstructions getNotifInstructions"
+    "footer footer";
+  gap: 0.25;
+}
+
+/*NAV STYLES*/
+nav {
+  grid-area: nav;
+  display: inline-flex;
+  margin: var(--main-margin);
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  background:  rgb(87, 0, 128, 0.42);;
+}
+nav ul {
+  display: flex;
+  width: 80%;
+  padding-right: 50px;
+  padding-left: 100px;
+  text-decoration: none;
+  list-style: none;
+  justify-content: space-between;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.logo {
+  width: 20%;
+  display: flex;
+  color: white;
+  font-size: 20px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  
+}
+
+.logo div {
+  align-content: center;
+  align-items: center;
+  text-align:center;
+}
+/*NAV STYLES*/
+
+/*MAIN STYLES*/
+main {
+  grid-area: main;
+  margin: var(--main-margin);
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  background-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main div{
+  background-color: rgb(137, 84, 236, .30);
+  color: white;
+  box-shadow: 10px, 10px, 12px, white inset;
+  border-radius: 5px;
+  width: 90%;
+  height: 90%;
+  z-index: 10;
+}
+
+.yourCurrencies {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:bolder;
+  font-size:x-large;
+  margin-left: 30px;
+  
+}
+.currencyTable {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  min-width: 400px;
+  border-collapse:separate;
+  border-spacing: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.currencyTable tr {  
+  text-align:left;  
+}
+
+.currencyTable td{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 50px;
+  background: rgba(200.43, 160.90, 250.75, 0.15);
+  border-radius: 6px;
+}
+
+/*MAIN STYLES*/
+
+/*CONVERTER STYLES*/
+.converter {
+  grid-area: converter;
+  margin: var(--main-margin);
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  background-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.converterBox {
+  background-color: rgb(137, 84, 236, .30);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 10px, 10px, 12px, white inset;
+  border-radius: 5px;
+  width: 90%;
+  height: 90%;
+  z-index: 10;
+  padding-left: 20px;
+}
+.converterTitle{
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-left: 15px;
+
+}
+.amountLabel {
+  display: block;
+  margin-top: 10px;
+}
+.amountInput {
+  display: block;
+  margin-bottom: 15px;
+}
+input[type="number"],
+select {
+  width: 100px;
+  padding: 5px;
+  border-radius: 5px;
+}
+#result {
+  margin-top: 20px;
+}
+#convertedAmount {
+  font-weight: bold;
+  font-size: 24px;
+}
+.convert {
+  width: 150px;
+    height: 40px;
+    background: #39003A;
+    border-radius: 21px;
+    color: white; 
+    margin-top: 10px;
+}
+.result{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+.resultLabel{
+  width: 150px;
+}
+
+.resultBox{
+  border: #05000b;
+  background-color: white;
+  border-style: solid;
+  border-radius: 6px;
+  width: 150px;
+  height:30px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.trackInstructions {
+  grid-area: trackInstructions;
+  margin: var(--main-margin);
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  background-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.trackInstructionsBox {
+  background-color: rgb(137, 84, 236, .30);
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  box-shadow: 10px, 10px, 12px, white inset;
+  border-radius: 5px;
+  width: 90%;
+  height: 90%;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+}
+.trackInstructionsBox div {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+.trackButton {
+    margin-top: 10px;
+    width: 150px; 
+    height: 40px; 
+    background: rgba(57.27, 0, 58.44, 0.94); 
+    border-radius: 21px;
+    color: white;
+}
+/*getNotifInstructions styles*/
+.getNotifInstructions {
+  grid-area: getNotifInstructions;
+  margin: var(--main-margin);
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  background-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.getNotifInstructionsBox {
+  background-color: rgb(137, 84, 236, .30);
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  box-shadow: 10px, 10px, 12px, white inset;
+  border-radius: 5px;
+  width: 90%;
+  height: 90%;
+  z-index: 10;
+}
+.getNotifTitle {
+    color: white; 
+    font-size: 25px;  
+    font-weight:bolder; 
+    word-wrap: break-word;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.setRate {
+    color: white; 
+    font-size: 16px;  
+    margin-left: 20px;
+    word-wrap: break-word"
+}
+.notifyButton {
+    width: 150px;
+    height: 40px;
+    background: #39003A;
+    border-radius: 21px;
+    color: white; 
+    margin: 10px;
+}
+.steps {
+  padding:5px;
+  margin-left: 20px;
+}
+/*getNotifInstructions styles*/
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  margin: var(--main-margin);
+  border-radius: var(--main-radius);
+  padding-top: 5px 
+}
+
+#socMed {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+}
+.sIcon {
+    width: 100px;
+    height:100px;
+    text-align: center;
+}
+.sIcon i{
+    font-size: 40px;
+    
+}
+.sIcon i:hover {
+    font-size: 45px;
+}

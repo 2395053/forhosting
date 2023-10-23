@@ -1,0 +1,83 @@
+<%- include("templates/headerTemplate") %>
+  <link rel="stylesheet" href="/CSS/indexStyles.css" />
+  <body>
+    <div class="Container">
+        <%-include("templates/navTemplate")%>  
+      <main>
+        <div>
+        <p class="yourCurrencies">YOUR CURRENCIES</p>
+        <table class="currencyTable">
+          <tbody id="dataOutput">
+            <!--to be generated in js-->
+            <%toDisplay.forEach (element => {%>     
+         <tr>
+            <td id="td1"><%=element.currSymbol%>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<%=element.currentRate%></td>
+            <%});%>
+         </tr>
+          </tbody>
+        </table>
+      </div>
+      </main>
+      <div class="converter">
+        <div class="converterBox">
+          <div class="converterTitle">CURRENCY CONVERTER</div>
+          <form id="currencyConverterForm" action ="/" method="post">
+            <label class="amountLabel" for="amount">Amount:</label>
+            <input class="amountInput" type="number" id="amountInput" name="amountInput" min="0" required /> 
+            <label for="from">From Currency:</label>
+            <select id="fromCurrency" name="fromCurrency" required>
+              <!-- to be generated in js -->
+            </select>
+            <label for="to">To Currency:</label>
+            <select id="toCurrency" name="toCurrency" required>
+              <!-- to be generated in js -->
+            </select>
+            <button class="convert" id="convert_button" type="submit">CONVERT</button>
+          </form>
+          <div class="result">
+            <div class="resultLabel">
+              <p>Converted Amount: </p>
+            </div>
+            <div class="resultBox">
+               <span style="color: black;"><%=convertedAmount%></span>
+            </div>
+          </div>
+        </div>  
+      </div>
+      <div class="trackInstructions">
+        <div class="trackInstructionsBox">
+          <div>
+            <div> YOUR BASE CURRENCY IS: <%=base%></div>
+            <form id="changeCurrencyForm" action ="/changeBase" method="post"> 
+              <label for="changeCurrency">Currency:</label>
+              <select id="changeCurrency" name="changeCurrency" required>
+              <!-- to be generated in js -->
+              </select>
+              <br>
+              <button class="trackButton" type="submit" >CHANGE</button> 
+            </form>
+                     
+          </div>
+          <div>
+            <button class="trackButton">TRACK</button>
+            <div>TO MODIFY CURRENCIES TRACKED</div>
+          </div>          
+        </div>  
+      </div>
+      <div class="getNotifInstructions">
+        <div class="getNotifInstructionsBox">
+          <div class="getNotifTitle">GET NOTIFIED</div>
+          <div class="setRate">
+            Set rate alert so you will never miss your desired rate.
+          </div>
+          <button class="notifyButton">NOTIFY</button>
+          <div class="steps"><Span style="text-decoration: underline;">STEP 1:</Span>Select Currency</div>
+          <div class="steps"><Span style="text-decoration: underline;">STEP 2:</Span>Enter Desired Amount</div>
+          <div class="steps"><Span style="text-decoration: underline;">STEP 3:</Span>Select Notification Method</div>
+        </div>      
+      </div>
+      <%- include("templates/footerTemplate") %>  
+    </div>
+    <script src="/JS/indexScript.js"></script>
+  </body>
+</html>

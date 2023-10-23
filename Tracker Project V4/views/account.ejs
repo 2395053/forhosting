@@ -1,0 +1,61 @@
+<%- include("templates/headerTemplate") %> 
+  <link rel="stylesheet" href="/CSS/accounStyles.css" />
+  <body>
+    <div class="Container">
+      <%- include("templates/navTemplate") %>
+      <main>
+        <div>
+          <h1>Account Profile </h1>
+        <form name="account" class="account-form" onsubmit="return formValidation()">
+          <table>
+            <tr>
+              <td><label for="First Name">First Name:</label> </td>
+              <td><input type="text" name="First Name" id="firstNameInput" placeholder="First Name" required></td>
+            </tr>
+            <tr>
+                <td><label for="Last Name">Last Name:</label></td>
+                <td><input type="text" name="lasName" id="lastNameInput" placeholder="Last name" required></td>
+              </tr>
+              <tr>
+                <td><label for="date">Date OF Birth</label></td>
+                <td><input type="date" name="date" id="dOBInput" required></td>
+              </tr>
+            <tr>
+              <td><label for="email">Email:</label></td>
+              <td><input type="email" name="email" id="emailInput" placeholder="name@sample.com" required></td>
+            </tr>    
+                <td><label for="address">Address :</label></td>
+                <td><input type="text" name="address" id="addressInput"></td>
+            </tr>
+            <tr>
+                <td><label for="postalcode">Postal Code:</label></td>
+                <td><input type="text" name="zipcode" id="zipcodeInput"></td>
+            </tr>
+            <tr>
+                <td><label for="country">Country</label></td>
+                <td><input type="number" name="country" id="countryInput"></td>
+              </tr>
+            <tr>
+            <tr>
+              <td><label for="phoneNumber">Phone Number:</label></td>
+              <td><input type="number" name="phoneNumber" id="phoneNumberInput" required placeholder="(514)1243567"></td>
+            </tr>
+            <tr>
+              <td><label for="gender">Gender:</label></td>
+            <td>
+                Male: <input type="radio" name="gender" value="male">
+                Female: <input type="radio" name="gender" value="female"> 
+            </td>     
+            </tr> 
+            
+              <td><button type="button" class="notifyButton">UPDATE</button></td>
+              <td><button type="button" class="notifyButton">RESET</button></td>
+            </tr>
+          </table>
+        </form>
+        </div>    
+      </main>
+      <%- include("templates/footerTemplate") %>
+    </div>
+  </body>
+</html>
